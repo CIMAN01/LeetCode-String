@@ -62,7 +62,6 @@ public class DetectCapital {
                 upperCases++;
             }
         }
-
         // if first letter is capital and the rest are lower cases, return true
         if (isFirstLetterCapital && lowerCases == word.length()-1) { // word.length()-1 because first letter is already included
             return true;
@@ -78,8 +77,41 @@ public class DetectCapital {
     }
 
 
+    // a method that the checks if a string uses capitals in the proper way
+    public boolean detectCapitalUse2(String word) {
+        // assign the length of word to variable len
+        int len = word.length();
+        // if length is equal to one, return true
+        if (len == 1) {
+            return true;
+        }
+        // case 1: if all letters are capital - make sure first two indexes contain capital letters
+        if (Character.isUpperCase(word.charAt(0)) && Character.isUpperCase(word.charAt(1))) {
+            // traverse the word
+            for (int i = 2; i < len; i++) {
+                // is lowercase is found at i-th index, return false
+                if (Character.isLowerCase(word.charAt(i))) {
+                    return false;
+                }
+            }
+        }
+        // the other two cases
+        else {
+            // traverse the word
+            for (int i = 1; i < len; i++) {
+                // if any uppercase letters found at i-th index, return false
+                if (Character.isUpperCase(word.charAt(i))) {
+                    return false;
+                }
+            }
+        }
+        // if we pass one of the cases, true is returned
+        return true;
+    }
+
+
     // a method that the checks if a string uses capitals in the proper way (short/regex version)
-    public static boolean detectCapitalUse2(String word) {
+    public static boolean detectCapitalUse3(String word) {
         // if string is empty, return false
         if (word == null) {
             return false;

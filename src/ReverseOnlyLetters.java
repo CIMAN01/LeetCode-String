@@ -52,8 +52,7 @@ public class ReverseOnlyLetters {
         return (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122);
     }
 
-
-    // a method that takes in a string and reverses only the letters (shorter faster version)
+    // a method that takes in a string and reverses only the letters
     public static String reverseOnlyLetters(String S) {
         // handling base case of an empty string
         if (S == null || S.length() == 0) {
@@ -89,7 +88,7 @@ public class ReverseOnlyLetters {
         return new String(ch);
     }
 
-    // a method that reverses a string without affecting special characters (longer easier version)
+    // a method that reverses a string without affecting special characters (using StringBuilder)
     public static String reverseOnlyLetters2(String str) {
         // create an array of characters with a length equal to the input String
         char[] arr = new char[str.length()];

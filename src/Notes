@@ -1,0 +1,35 @@
+
+* Optimal job application question *
+
+Sum of all multiples of 3 or 5 less than 1000, and how you calculated it
+(use any language or mathematical formula you want)
+
+Solution:
+
+class Solution {
+    // main method
+    public static void main(String[] args) {
+        // invoke the method and print the result to the console
+        System.out.println(sumOfAllMultiples(1000));
+    }
+
+    public static int sumOfAllMultiples(int n) {
+        // create and initialize a sum variable
+        int sum = 0;
+        // use a for-loop to traverse up to but not including 1000
+        for (int i = 0; i < n; i++) {
+            // if a multiple of 5
+            if (i % 5 == 0) {
+                // add to sum
+                sum += i;
+            }
+            // if a multiple of 3 or 5
+            else if (i % 3 == 0 || i % 5 == 0) {
+                // add to sum
+                sum += i;
+            }
+        }
+        // return the sum
+        return sum;
+    }
+}
