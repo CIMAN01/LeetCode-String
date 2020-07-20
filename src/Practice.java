@@ -1,61 +1,31 @@
 /*
 
-Find All Palindrome Substrings
+Given a series of numbers, write a function to return the results in a certain.
 
-Input String = aabbbaa
+For Example, if the series is 8,3,8,4,2,2 the expected output should be 22131428
 
-Palindrome substring = aa bb bbb abbba aabbbaa bb aa
+You are free to use any programming language of your choice
 
-Hint: find substrings
-
- */
+*/
 
 
 // main class
 class Practice { // PalindromeSubStrings
 
     // a method that
-    public static int findPalindromesInSubString(String input, int j, int k) {
-        //
-        int count = 0;
-        //
-        for (; j >= 0 && k < input.length(); --j, ++k) {
-            //
-            if (input.charAt(j) != input.charAt(k)) {
-                break;
-            }
-            //
-            System.out.println(input.substring(j, k+1));
-            //
-            count++;
-        }
-        //
-        return count;
-    }
+    public static String getNumberFrequency(String input) {
 
-    // a method that
-    public static int findAllPalindromeSubstrings(String input) {
-        //
-        int count = 0;
-        //
-        for(int i = 0 ; i < input.length() ; ++i) {
-            //
-            count+= findPalindromesInSubString(input, i-1, i+1);
-            //
-            count+= findPalindromesInSubString(input, i, i+1);
-        }
-        //
-        return count;
+       // code here
+
+       return "empty string";
     }
 
     // main method
     public static void main(String[] args) {
         //
-        String str = "aabbbaa";
+        String str = "838422";
         //
-        int count = findAllPalindromeSubstrings(str);
-        //
-        System.out.println("Total palindrome substrings: " + count);
+        System.out.println(getNumberFrequency(str));
     }
 
 }

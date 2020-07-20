@@ -67,9 +67,10 @@ public class PositionsOfLargeGroups {
         //  scan through the string to identify the start and end of each group
         for (int j = 0; j < S.length(); j++) { // ++j
             // we have reached the end of the group when j is at the end of the string or S[j] != S[j+1]
-            if (j == S.length()-1 || S.charAt(j) != S.charAt(j+1)) {
+            if (j == S.length() - 1 || S.charAt(j) != S.charAt(j + 1)) {
                 // if the size of the group is at least 3, we add it to the answer
-                if (j-i+1 >= 3) { // here, [i, j] represents a group
+                if (j + 1 - i >= 3) { // the difference between starting and ending points determines the size
+                    // here, [i, j] represents a group, where i is the starting point and j is the ending point
                     answer.add(Arrays.asList(i, j)); // Arrays.asList(new Integer[]{i, j})
                 }
                 // update i, the start of the next group
@@ -106,7 +107,6 @@ public class PositionsOfLargeGroups {
             temp = "";
             // reset count
             count = 0;
-
         }
         // create an array of size two
         int[] array = new int[2];
@@ -153,7 +153,7 @@ public class PositionsOfLargeGroups {
         System.out.println();
         System.out.println("input = " + input1); // Input: "abbxxxxzzy"
         // invoke the method and print the output
-        System.out.println("output = " + returnLargestGroup(inputOne)); // Output: [3,6]
+        System.out.println("output = " + returnLargestGroup(inputOne)); // output: [3,6]
     }
 
 }
