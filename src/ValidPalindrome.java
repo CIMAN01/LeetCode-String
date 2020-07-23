@@ -28,8 +28,25 @@ Constraints:
 // main class
 public class ValidPalindrome {
 
+    // a method that checks if a sentence is palindrome or not (efficient, short for-loop version)
+    public static boolean isPalindrome2(String s) {
+        // replace entire string with regex and change each character to lowercase
+        s = s.replaceAll("[^A-Za-z0-9]","").toLowerCase();
+        // pointers i and j start at opposite ends of the string and iterate in opposite direction
+        for (int i = 0, j = s.length()-1; i < j; ++i, --j) { // as long as pointers do not cross keep iterating them
+            // if left pointer's char does not equal right pointer's char (if chars do not match)
+            if (s.charAt(i) != s.charAt(j)) {
+                // it is not a palindrome
+                return false;
+            }
+        }
+        // once the comparison is done, the string must be a palindrome (condition is true)
+        return true;
+    }
+    
+    
     // a method that checks if a sentence is palindrome or not (efficient while-loop version)
-    public static boolean isPalindrome(String s) {
+    public static boolean isPalindrome2(String s) {
         // replace entire string with regex and change each character to lowercase
         s = s.replaceAll("[^A-Za-z0-9]","").toLowerCase();
         // create 2 pointers
@@ -53,7 +70,7 @@ public class ValidPalindrome {
 
 
     // a method that checks if a sentence is palindrome or not (easy for-loop version)
-    public static boolean isPalindrome2(String s) {
+    public static boolean isPalindrome3(String s) {
         // remove spaces from string and change to lower case
         s = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase(); // (regex: "\\s", "")
         // create an empty string using StringBuilder
