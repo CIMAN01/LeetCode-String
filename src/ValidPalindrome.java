@@ -86,7 +86,7 @@ public class ValidPalindrome {
 
 
     // a method that checks if a sentence is palindrome or not (short 'built-in methods' version)
-    public static boolean isPalindrome3(String s) {
+    public static boolean isPalindrome4(String s) {
         // remove spaces from string and change to lower case
         s = s.toLowerCase().replaceAll("\\s", "");
         // check if condition holds true for a palindrome, if it does return true
